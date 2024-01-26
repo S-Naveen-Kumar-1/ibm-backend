@@ -12,7 +12,7 @@ app.use(express.json())
 const io = new Server(server, {
     cors: {
         origin: "http://localhost:3000",
-        methods: ["GET", "POST"]
+        methods: ["GET", "POST", "PATCH", "DELETE"]
     }
 })
 io.on("connection", (socket) => {
