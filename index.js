@@ -11,7 +11,7 @@ const { bugRouter } = require("./routes/bug.routes")
 app.use(express.json())
 const io = new Server(server, {
     cors: {
-        origin: "https://ibm-mocha.vercel.app/",
+        origin: "https://ibm-mocha.vercel.app",
     }
 })
 io.on("connection", (socket) => {
