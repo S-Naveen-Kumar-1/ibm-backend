@@ -10,9 +10,9 @@ const { userRouter } = require("./routes/user.routes")
 const { bugRouter } = require("./routes/bug.routes")
 app.use(express.json())
 const io = new Server(server, {
-    // cors: {
-    //     origin: "http://localhost:3000",
-    // }
+    cors: {
+        origin: "https://ibm-mocha.vercel.app/",
+    }
 })
 io.on("connection", (socket) => {
     console.log(`User Connected ${socket.id}`)
