@@ -35,7 +35,7 @@ bugRouter.patch("/bugs/:id", async (req, res) => {
         res.send(err.message)
     }
 })
-bugRouter.patch("/bugs/:id", async (req, res) => {
+bugRouter.delete("/bugs/:id", async (req, res) => {
     const { id } = req.params
     const bug = await BugModel.findOne({ _id: id })
     try {
