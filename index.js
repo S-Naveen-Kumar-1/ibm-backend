@@ -9,7 +9,12 @@ const server = http.createServer(app)
 const { userRouter } = require("./routes/user.routes")
 const { bugRouter } = require("./routes/bug.routes")
 app.use(express.json())
-const io = new Server(server)
+const io = new Server(server, {
+    cors: {
+        origin: "https://ibm-mocha.vercel.app",
+        methods: ["GET", "POST"]
+    }
+})
 io.on("connection", (socket) => {
     console.log(`User Connected ${socket.id}`)
     socket.on("join_room", (data) => {
